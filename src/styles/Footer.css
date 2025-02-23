@@ -1,0 +1,56 @@
+.footer {
+  background: rgba(48, 48, 48, 1);
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  padding: 40px 20px;
+  width: 1920px;
+}
+
+.footer-top {
+  display: flex;
+  font-family: "BuyanRegular";
+  font-weight: 400;
+  font-size: 150px;
+  line-height: 196.2px;
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  gap: 420px;
+  font-family: "centurygothic";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 46px;
+}
+
+.footer-bottom .social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom .contact-info {
+  display: flex;
+  gap: 200px;
+}
+
+.social-circle {
+  width: 97px;
+  height: 97px;
+  background: rgba(132, 170, 200, 1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-circle img {
+  width: 64px;
+  height: 64px;
+}
+
+.social-circle:hover {
+  background-color: rgba(102, 128, 160, 1);
+}

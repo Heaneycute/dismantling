@@ -1,0 +1,47 @@
+.advantages-section {
+  padding: 50px;
+  width: 1920px;
+  color: rgba(48, 48, 48, 1);
+}
+
+.advantages-section h2 {
+  font-family: "BuyanRegular";
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 109px;
+  text-align: left;
+}
+
+.advantages-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.advantage-block {
+  text-align: center;
+  padding: 20px;
+  text-align: left;
+}
+
+.advantage-icon {
+  width: 97px;
+  height: 97px;
+  background: rgba(132, 170, 200, 1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.advantage-icon img {
+  width: 63px;
+  height: 63px;
+}
+
+p {
+  font-family: "centurygothic";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 46px;
+}
