@@ -4,4 +4,5 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/dismantling/', // Указываем путь к репозиторию на GitHub Pages
 })
