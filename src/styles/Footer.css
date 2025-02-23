@@ -9,10 +9,10 @@
 .footer-top {
   display: flex;
   font-family: "BuyanRegular";
+  font-size: 180px;
   font-weight: 400;
-  font-size: 150px;
   line-height: 196.2px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .footer-bottom {

@@ -2,7 +2,7 @@
   padding: 40px;
   text-align: center;
   width: 1750px;
-  height: 90vh;
+  height: 120vh;
   position: relative; 
 }
 
@@ -20,6 +20,7 @@
   justify-content: center;
   position: relative;
   gap: 20px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .service-item {
@@ -34,6 +35,7 @@
   justify-content: space-between;
   padding: 20px;
   margin-bottom: 40px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .service-image {
@@ -136,7 +138,7 @@
   font-family: "centurygothic";
   font-weight: 400;
   text-align: left;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 45px;
 }
 

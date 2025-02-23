@@ -80,9 +80,7 @@ const ServicesSection: React.FC = () => {
                 ))}
               </div>
             </div>
-            <button onClick={() => setActiveModal(index)}>
-              Узнать подробнее
-            </button>
+            <button onClick={() => setActiveModal(index)}>Узнать подробнее</button>
 
             {activeModal === index && (
               <div className="service-modal">
