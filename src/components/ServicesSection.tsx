@@ -48,61 +48,70 @@ const services = [
 
 const ServicesSection: React.FC = () => {
   const [activeModal, setActiveModal] = useState<number | null>(null);
-  const [visibleImages, setVisibleImages] = useState([0, 1]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextImages = () => {
-    setVisibleImages((prev) => prev.map((i) => (i + 1) % services.length));
+  const totalSlides = services.length;
+  const maxIndex = totalSlides - 2;
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
-  const prevImages = () => {
-    setVisibleImages((prev) =>
-      prev.map((i) => (i - 1 + services.length) % services.length)
-    );
+  const prevSlide = () => {
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
   return (
     <section className="services-section">
       <h2>ЧТО МЫ ПРЕДЛАГАЕМ?</h2>
-      <div className="services-slider">
-        {visibleImages.map((index) => (
-          <div key={index} className="service-item">
-            <div
-              className="service-image"
-              style={{ backgroundImage: `url(${services[index].image})` }}
-            >
+      <div className="services-slider-wrapper">
+        <div
+          className="services-slider"
+          style={{
+            transform: `translateX(-${currentIndex * 955}px)`,
+          }}
+        >
+          {services.map((service, index) => (
+            <div key={service.id} className="service-item">
               <div
-                className={`service-title ${
-                  services[index].title.length === 2 ? "shift-up" : ""
-                }`}
+                className="service-image"
+                style={{ backgroundImage: `url(${service.image})` }}
               >
-                {services[index].title.map((line, i) => (
-                  <p key={i}>{line}</p>
-                ))}
-              </div>
-            </div>
-            <button onClick={() => setActiveModal(index)}>Узнать подробнее</button>
-
-            {activeModal === index && (
-              <div className="service-modal">
-                <span
-                  className="modal-close"
-                  onClick={() => setActiveModal(null)}
+                <div
+                  className={`service-title ${
+                    service.title.length === 2 ? "shift-up" : ""
+                  }`}
                 >
-                  ✖
-                </span>
-                <p>{services[index].description}</p>
+                  {service.title.map((line, i) => (
+                    <p key={i}>{line}</p>
+                  ))}
+                </div>
               </div>
-            )}
-          </div>
-        ))}
-        {visibleImages[1] < services.length - 1 && (
-          <div className="next-arrow" onClick={nextImages}>
-            <img src={rightArrow} alt="Next" />
+              <button onClick={() => setActiveModal(index)}>
+                Узнать подробнее
+              </button>
+              {activeModal === index && (
+                <div className="service-modal">
+                  <span
+                    className="modal-close"
+                    onClick={() => setActiveModal(null)}
+                  >
+                    ✖
+                  </span>
+                  <p>{service.description}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        {currentIndex > 0 && (
+          <div className="prev-arrow" onClick={prevSlide}>
+            <img src={leftArrow} alt="Previous" />
           </div>
         )}
-        {visibleImages[0] > 0 && (
-          <div className="prev-arrow" onClick={prevImages}>
-            <img src={leftArrow} alt="Previous" />
+        {currentIndex < maxIndex && (
+          <div className="next-arrow" onClick={nextSlide}>
+            <img src={rightArrow} alt="Next" />
           </div>
         )}
       </div>

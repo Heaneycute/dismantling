@@ -1,9 +1,8 @@
 .services-section {
   padding: 40px;
   text-align: center;
-  width: 1750px;
-  height: 120vh;
-  position: relative; 
+  height: 110vh;
+  position: relative;
 }
 
 .services-section h2 {
@@ -15,16 +14,19 @@
   color: rgba(48, 48, 48, 1);
 }
 
+.services-slider-wrapper {
+  position: relative;
+  width: 1830px;
+}
+
 .services-slider {
   display: flex;
-  justify-content: center;
-  position: relative;
-  gap: 20px;
+  gap: 30px;
   transition: transform 0.5s ease-in-out;
 }
 
 .service-item {
-  width: 875px;
+  width: 925px;
   height: 448px;
   position: relative;
   border-radius: 40px;
@@ -33,9 +35,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
   margin-bottom: 40px;
-  transition: transform 0.5s ease-in-out;
+  flex-shrink: 0;
 }
 
 .service-image {
@@ -58,7 +59,6 @@
   line-height: 46px;
   text-align: left;
 }
-
 
 .service-title.shift-up {
   bottom: 60px;
@@ -118,7 +118,7 @@
 
 .service-modal {
   position: absolute;
-  top: 100%;
+  top: 105%;
   left: 50%;
   transform: translateX(-50%);
   width: 750px;
@@ -140,17 +140,6 @@
   text-align: left;
   font-size: 30px;
   line-height: 45px;
-}
-
-.service-modal button {
-  background-color: #84aac8;
-  border: none;
-  color: rgba(255, 255, 255, 1);
-  cursor: pointer;
-}
-
-.service-modal button:hover {
-  background-color: #5e7a98;
 }
 
 .modal-close {
