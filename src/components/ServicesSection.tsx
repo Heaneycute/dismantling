@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, memo, useCallback } from "react";
 import "../styles/ServicesSection.css";
 import img1 from "../assets/1.png";
 import img2 from "../assets/2.png";
@@ -46,7 +46,7 @@ const services = [
   },
 ];
 
-const ServicesSection: React.FC = () => {
+const ServicesSection: React.FC = memo(() => {
   const [activeModal, setActiveModal] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalPosition, setModalPosition] = useState<{
@@ -54,23 +54,22 @@ const ServicesSection: React.FC = () => {
     left: number;
   } | null>(null);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
   const totalSlides = services.length;
   const maxIndex = totalSlides - 2;
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
     setActiveModal(null);
-  };
+  }, [maxIndex]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
     setActiveModal(null);
-  };
+  }, []);
 
-  const openModal = (index: number) => {
+  const openModal = useCallback((index: number) => {
     setActiveModal(index);
-  };
+  }, []);
 
   useEffect(() => {
     if (activeModal !== null && buttonRefs.current[activeModal]) {
@@ -87,7 +86,10 @@ const ServicesSection: React.FC = () => {
   }, [activeModal]);
 
   return (
-    <section className="services-section">
+    <section
+      className="services-section"
+      aria-label="Услуги компании: полный цикл работ, документация, вывоз мусора, экологическое сопровождение"
+    >
       <h2>ЧТО МЫ ПРЕДЛАГАЕМ?</h2>
       <div className="services-slider-wrapper">
         <div
@@ -117,6 +119,7 @@ const ServicesSection: React.FC = () => {
                   buttonRefs.current[index] = el;
                 }}
                 onClick={() => openModal(index)}
+                aria-label={`Узнать подробнее о ${service.title[0]}`}
               >
                 Узнать подробнее
               </button>
@@ -125,12 +128,12 @@ const ServicesSection: React.FC = () => {
         </div>
         {currentIndex > 0 && (
           <div className="prev-arrow" onClick={prevSlide}>
-            <img src={leftArrow} alt="Previous" />
+            <img src={leftArrow} alt="Предыдущий слайд" loading="lazy" />
           </div>
         )}
         {currentIndex < maxIndex && (
           <div className="next-arrow" onClick={nextSlide}>
-            <img src={rightArrow} alt="Next" />
+            <img src={rightArrow} alt="Следующий слайд" loading="lazy" />
           </div>
         )}
       </div>
@@ -142,8 +145,13 @@ const ServicesSection: React.FC = () => {
             top: `${modalPosition.top}px`,
             left: `${modalPosition.left}px`,
           }}
+          aria-label={`Описание услуги: ${services[activeModal].description}`}
         >
-          <span className="modal-close" onClick={() => setActiveModal(null)}>
+          <span
+            className="modal-close"
+            onClick={() => setActiveModal(null)}
+            aria-label="Закрыть модальное окно"
+          >
             ✖
           </span>
           <p>{services[activeModal].description}</p>
@@ -151,6 +159,6 @@ const ServicesSection: React.FC = () => {
       )}
     </section>
   );
-};
+});
 
 export default ServicesSection;

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
 import "../styles/Footer.css";
 import TG from "../assets/TG.png";
 import WA from "../assets/WA.png";
 
-const Footer: React.FC = () => {
+const Footer: React.FC = memo(() => {
   return (
-    <footer className="footer">
+    <footer
+      className="footer"
+      aria-label="Контактная информация и социальные сети компании"
+    >
       <div className="footer-top">
         <h2>Мы на связи!</h2>
       </div>
@@ -15,18 +18,20 @@ const Footer: React.FC = () => {
             href="https://t.me/Snos_SPB"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Telegram компании"
           >
             <div className="social-circle telegram">
-              <img src={TG} alt="Telegram" />
+              <img src={TG} alt="Иконка Telegram" loading="lazy" />
             </div>
           </a>
           <a
             href="https://wa.me/qr/TUAHMMTAHWAQG1"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="WhatsApp компании"
           >
             <div className="social-circle whatsapp">
-              <img src={WA} alt="WhatsApp" />
+              <img src={WA} alt="Иконка WhatsApp" loading="lazy" />
             </div>
           </a>
         </div>
@@ -37,6 +42,6 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+});
 
 export default Footer;

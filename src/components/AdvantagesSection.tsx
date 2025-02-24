@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "../styles/AdvantagesSection.css";
 import lockIcon from "../assets/lock.png";
 import moneyIcon from "../assets/money.png";
@@ -15,15 +15,22 @@ const advantages = [
   { desc: "Сдача в срок - ваше время ценно для нас", icon: timeIcon },
 ];
 
-const AdvantagesSection: React.FC = () => {
+const AdvantagesSection: React.FC = memo(() => {
   return (
-    <section className="advantages-section">
+    <section
+      className="advantages-section"
+      aria-label="Преимущества нашей компании: современная техника, выгодные цены, безопасность и соблюдение сроков"
+    >
       <h2>НАШИ ПРЕИМУЩЕСТВА:</h2>
       <div className="advantages-list">
         {advantages.map((adv, index) => (
           <div key={index} className="advantage-block">
             <div className="advantage-icon">
-              <img src={adv.icon} alt="icon" />
+              <img
+                src={adv.icon}
+                alt={`Иконка преимущества ${index + 1}`}
+                loading="lazy"
+              />
             </div>
             <p>{adv.desc}</p>
           </div>
@@ -31,6 +38,6 @@ const AdvantagesSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default AdvantagesSection;
