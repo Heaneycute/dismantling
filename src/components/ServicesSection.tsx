@@ -90,17 +90,6 @@ const ServicesSection: React.FC = () => {
               <button onClick={() => setActiveModal(index)}>
                 Узнать подробнее
               </button>
-              {activeModal === index && (
-                <div className="service-modal">
-                  <span
-                    className="modal-close"
-                    onClick={() => setActiveModal(null)}
-                  >
-                    ✖
-                  </span>
-                  <p>{service.description}</p>
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -115,6 +104,14 @@ const ServicesSection: React.FC = () => {
           </div>
         )}
       </div>
+      {activeModal !== null && (
+        <div className="service-modal">
+          <span className="modal-close" onClick={() => setActiveModal(null)}>
+            ✖
+          </span>
+          <p>{services[activeModal].description}</p>
+        </div>
+      )}
     </section>
   );
 };

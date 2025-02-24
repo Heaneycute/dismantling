@@ -1,7 +1,7 @@
 .services-section {
   padding: 40px;
   text-align: center;
-  height: 110vh;
+  height: 105vh;
   position: relative;
 }
 
@@ -17,6 +17,7 @@
 .services-slider-wrapper {
   position: relative;
   width: 1830px;
+  overflow: hidden;
 }
 
 .services-slider {
@@ -118,9 +119,6 @@
 
 .service-modal {
   position: absolute;
-  top: 105%;
-  left: 50%;
-  transform: translateX(-50%);
   width: 750px;
   height: 270px;
   background: rgba(132, 170, 200, 0.35);
