@@ -11,12 +11,20 @@ const Footer: React.FC = () => {
       </div>
       <div className="footer-bottom">
         <div className="social-icons">
-          <a href="https://t.me/Snos_SPB" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://t.me/Snos_SPB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="social-circle telegram">
               <img src={TG} alt="Telegram" />
             </div>
           </a>
-          <a href="https://wa.me/qr/TUAHMMTAHWAQG1" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://wa.me/qr/TUAHMMTAHWAQG1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="social-circle whatsapp">
               <img src={WA} alt="WhatsApp" />
             </div>

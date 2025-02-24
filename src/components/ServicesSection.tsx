@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "../styles/ServicesSection.css";
 import img1 from "../assets/1.png";
 import img2 from "../assets/2.png";
@@ -49,17 +49,42 @@ const services = [
 const ServicesSection: React.FC = () => {
   const [activeModal, setActiveModal] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [modalPosition, setModalPosition] = useState<{
+    top: number;
+    left: number;
+  } | null>(null);
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const totalSlides = services.length;
   const maxIndex = totalSlides - 2;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+    setActiveModal(null);
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
+    setActiveModal(null);
   };
+
+  const openModal = (index: number) => {
+    setActiveModal(index);
+  };
+
+  useEffect(() => {
+    if (activeModal !== null && buttonRefs.current[activeModal]) {
+      const rect = buttonRefs.current[activeModal]!.getBoundingClientRect();
+      const newTop = rect.bottom + 10;
+      const newLeft = rect.left + rect.width / 2 - 850 / 2;
+      setModalPosition({
+        top: newTop,
+        left: newLeft,
+      });
+    } else {
+      setModalPosition(null);
+    }
+  }, [activeModal]);
 
   return (
     <section className="services-section">
@@ -87,7 +112,12 @@ const ServicesSection: React.FC = () => {
                   ))}
                 </div>
               </div>
-              <button onClick={() => setActiveModal(index)}>
+              <button
+                ref={(el: HTMLButtonElement | null) => {
+                  buttonRefs.current[index] = el;
+                }}
+                onClick={() => openModal(index)}
+              >
                 Узнать подробнее
               </button>
             </div>
@@ -104,8 +134,15 @@ const ServicesSection: React.FC = () => {
           </div>
         )}
       </div>
-      {activeModal !== null && (
-        <div className="service-modal">
+      {activeModal !== null && modalPosition && (
+        <div
+          className="service-modal"
+          style={{
+            position: "fixed",
+            top: `${modalPosition.top}px`,
+            left: `${modalPosition.left}px`,
+          }}
+        >
           <span className="modal-close" onClick={() => setActiveModal(null)}>
             ✖
           </span>

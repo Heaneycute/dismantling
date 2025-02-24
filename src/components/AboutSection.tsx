@@ -14,7 +14,9 @@ const AboutSection: React.FC = () => {
             <strong>107+</strong> проектов различной сложности реализовано
           </p>
           <p className="strong-text">
-            <strong>20%</strong>экономии<br />для клиента
+            <strong>20%</strong>экономии
+            <br />
+            для клиента
           </p>
         </div>
         <div className="about-image">

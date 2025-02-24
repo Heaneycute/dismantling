@@ -6,7 +6,10 @@ import tapIcon from "../assets/tap.png";
 import timeIcon from "../assets/time.png";
 
 const advantages = [
-  { desc: "Современная техника - оперативность и эффективность", icon: tapIcon },
+  {
+    desc: "Современная техника - оперативность и эффективность",
+    icon: tapIcon,
+  },
   { desc: "Выгодные цены - оптимизируем ваш бюджет", icon: moneyIcon },
   { desc: "Безопасность прежде всего - работаем по закону", icon: lockIcon },
   { desc: "Сдача в срок - ваше время ценно для нас", icon: timeIcon },
