@@ -119,8 +119,8 @@
 }
 
 .service-modal {
-  width: 875px;
-  height: 335px;
+  width: 850px;
+  height: 300px;
   background: rgba(132, 170, 200, 0.35);
   border-radius: 28px;
   padding: 45px;
@@ -137,7 +137,7 @@
   font-weight: 400;
   text-align: left;
   font-size: 30px;
-  line-height: 45px;
+  line-height: 38px;
 }
 
 .modal-close {
