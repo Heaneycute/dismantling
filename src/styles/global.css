@@ -1,9 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body, html {
   overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  min-width: 1920px;
 }
