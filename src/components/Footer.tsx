@@ -44,10 +44,12 @@ const Footer: React.FC = memo(() => {
             </div>
           </div>
         </div>
-        <div className="footer-right">
-          <div className="footer-image">
-            <img src={footerImage} alt="Изображение футера, иллюстрирующее деятельность компании" loading="lazy" />
-          </div>
+        <div className="footer-image">
+          <img
+            src={footerImage}
+            alt="Изображение футера, иллюстрирующее деятельность компании"
+            loading="lazy"
+          />
         </div>
       </div>
     </footer>

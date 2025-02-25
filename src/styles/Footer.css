@@ -69,13 +69,13 @@
   background-color: rgba(102, 128, 160, 1);
 }
 
-.footer-right {
+.footer-image {
+  display: flex;
+  justify-content: center;
   flex-shrink: 0;
 }
 
 .footer-image img {
-  display: flex;
-  align-items: center;
   width: 800px;
   height: 320px;
   border-radius: 40px;

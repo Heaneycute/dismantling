@@ -68,7 +68,6 @@ const ServicesSection: React.FC = memo(() => {
   }, []);
 
   const toggleModal = useCallback((index: number) => {
-    // Если модальное окно уже открыто для этого index, закрываем его, иначе открываем
     setActiveModal((prev) => (prev === index ? null : index));
   }, []);
 
