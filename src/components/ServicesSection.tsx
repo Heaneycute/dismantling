@@ -52,7 +52,6 @@ const ServicesSection: React.FC = memo(() => {
   const [modalPosition, setModalPosition] = useState<{
     top: number;
     left: number;
-    bottom:number;
   } | null>(null);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const totalSlides = services.length;
@@ -68,8 +67,9 @@ const ServicesSection: React.FC = memo(() => {
     setActiveModal(null);
   }, []);
 
-  const openModal = useCallback((index: number) => {
-    setActiveModal(index);
+  const toggleModal = useCallback((index: number) => {
+    // Если модальное окно уже открыто для этого index, закрываем его, иначе открываем
+    setActiveModal((prev) => (prev === index ? null : index));
   }, []);
 
   useEffect(() => {
@@ -77,11 +77,9 @@ const ServicesSection: React.FC = memo(() => {
       const rect = buttonRefs.current[activeModal]!.getBoundingClientRect();
       const newTop = rect.bottom + 10;
       const newLeft = rect.left + rect.width / 2 - 875 / 2;
-      const newBottom = rect.top + rect.height - newTop - 350;
       setModalPosition({
         top: newTop,
         left: newLeft,
-        bottom: newBottom,
       });
     } else {
       setModalPosition(null);
@@ -121,7 +119,7 @@ const ServicesSection: React.FC = memo(() => {
                 ref={(el: HTMLButtonElement | null) => {
                   buttonRefs.current[index] = el;
                 }}
-                onClick={() => openModal(index)}
+                onClick={() => toggleModal(index)}
                 aria-label={`Узнать подробнее о ${service.title[0]}`}
               >
                 Узнать подробнее
@@ -147,7 +145,6 @@ const ServicesSection: React.FC = memo(() => {
             position: "sticky",
             top: `${modalPosition.top}px`,
             left: `${modalPosition.left}px`,
-            bottom: `${modalPosition.bottom}px`,
           }}
           aria-label={`Описание услуги: ${services[activeModal].description}`}
         >

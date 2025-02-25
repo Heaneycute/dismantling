@@ -4,7 +4,20 @@
   text-align: center;
   padding: 0px 0px 0px 40px;
   width: 1920px;
-  height: 320px;
+  height: 360px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .footer-top {
@@ -54,4 +67,17 @@
 
 .social-circle:hover {
   background-color: rgba(102, 128, 160, 1);
+}
+
+.footer-right {
+  flex-shrink: 0;
+}
+
+.footer-image img {
+  display: flex;
+  align-items: center;
+  width: 800px;
+  height: 320px;
+  border-radius: 40px;
+  margin-right: 120px;
 }
