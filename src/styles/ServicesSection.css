@@ -119,9 +119,8 @@
 }
 
 .service-modal {
-  position: fixed;
-  width: 750px;
-  height: 270px;
+  width: 875px;
+  height: 350px;
   background: rgba(132, 170, 200, 0.35);
   border-radius: 28px;
   padding: 45px;
@@ -129,7 +128,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 12000;
+  z-index: 1500;
   transition: opacity 0.3s ease;
 }
 

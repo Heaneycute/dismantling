@@ -75,7 +75,7 @@ const ServicesSection: React.FC = memo(() => {
     if (activeModal !== null && buttonRefs.current[activeModal]) {
       const rect = buttonRefs.current[activeModal]!.getBoundingClientRect();
       const newTop = rect.bottom + 10;
-      const newLeft = rect.left + rect.width / 2 - 850 / 2;
+      const newLeft = rect.left + rect.width / 2 - 875 / 2;
       setModalPosition({
         top: newTop,
         left: newLeft,
@@ -141,7 +141,7 @@ const ServicesSection: React.FC = memo(() => {
         <div
           className="service-modal"
           style={{
-            position: "fixed",
+            position: "sticky",
             top: `${modalPosition.top}px`,
             left: `${modalPosition.left}px`,
           }}
