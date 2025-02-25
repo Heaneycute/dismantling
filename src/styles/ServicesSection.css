@@ -1,7 +1,7 @@
 .services-section {
   padding: 60px 0 0px 40px;
   text-align: center;
-  height: 104vh;
+  height: 105vh;
   position: relative;
   width: 1840px;
 }
@@ -120,7 +120,7 @@
 
 .service-modal {
   width: 875px;
-  height: 350px;
+  height: 335px;
   background: rgba(132, 170, 200, 0.35);
   border-radius: 28px;
   padding: 45px;
