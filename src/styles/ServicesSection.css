@@ -90,8 +90,7 @@
 .next-arrow,
 .prev-arrow {
   position: absolute;
-  top: 35%;
-  transform: translateY(-50%);
+  top: 28%;
   background-color: rgba(132, 170, 200, 1);
   border-radius: 50%;
   width: 67px;
@@ -100,6 +99,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.next-arrow:hover,
+.prev-arrow:hover {
+  background-color: #5e7a98;
+  transform: scale(1.1);
 }
 
 .next-arrow {
@@ -107,7 +113,6 @@
 }
 
 .prev-arrow {
-  transform: translateY(-50%) rotate(180deg);
   left: 10px;
 }
 
