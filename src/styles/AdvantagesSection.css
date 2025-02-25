@@ -1,6 +1,6 @@
 .advantages-section {
-  padding: 50px;
-  width: 1920px;
+  padding: 60px 0 20px 40px;
+  width: 1880px;
   color: rgba(48, 48, 48, 1);
 }
 
@@ -18,7 +18,7 @@
 }
 
 .advantage-block {
-  width: 89%;
+  width: 93%;
   text-align: center;
   padding: 30px;
   text-align: left;

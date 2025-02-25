@@ -1,8 +1,9 @@
 .services-section {
-  padding: 40px;
+  padding: 60px 0 0px 40px;
   text-align: center;
   height: 103vh;
   position: relative;
+  width: 1880px;
 }
 
 .services-section h2 {

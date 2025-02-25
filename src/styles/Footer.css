@@ -2,13 +2,15 @@
   background: rgba(48, 48, 48, 1);
   color: rgba(255, 255, 255, 1);
   text-align: center;
-  padding: 40px 20px;
+  padding: 0px 0px 0px 40px;
+  width: 1880px;
+  height: 320px;
 }
 
 .footer-top {
   display: flex;
   font-family: "BuyanRegular";
-  font-size: 150px;
+  font-size: 120px;
   font-weight: 400;
   line-height: 196.2px;
   margin-bottom: 20px;
@@ -17,7 +19,7 @@
 .footer-bottom {
   display: flex;
   align-items: center;
-  gap: 420px;
+  gap: 170px;
   font-family: "centurygothic";
   font-weight: 400;
   font-size: 50px;
@@ -30,7 +32,7 @@
 }
 
 .footer-bottom .contact-info {
-  display: flex;
+  text-align: left;
   gap: 80px;
 }
 
