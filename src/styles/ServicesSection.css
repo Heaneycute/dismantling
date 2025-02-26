@@ -1,49 +1,49 @@
 .services-section {
-  padding: 60px 0 40px 40px;
+  padding: 3.12vw 0 2.08vw 2.08vw;
   text-align: center;
   position: relative;
-  width: 1840px;
+  width: 100%;
 }
 
 .services-section h2 {
   font-family: "BuyanRegular";
-  font-size: 100px;
+  font-size: 5.2vw;
   font-weight: 400;
-  line-height: 109px;
+  line-height: 5.67vw;
   text-align: left;
   color: rgba(48, 48, 48, 1);
 }
 
 .services-slider-wrapper {
   position: relative;
-  width: 1830px;
+  width: 95.31vw;
   overflow: hidden;
 }
 
 .services-slider {
   display: flex;
-  gap: 30px;
+  gap: 1.56vw;
   transition: transform 0.5s ease-in-out;
 }
 
 .service-item {
-  width: 925px;
-  height: 448px;
+  width: 48.17vw;
+  height: 23.33vw;
   position: relative;
-  border-radius: 40px;
+  border-radius: 2.08vw;
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 2.08vw;
   flex-shrink: 0;
 }
 
 .service-image {
-  width: 875px;
-  height: 448px;
-  border-radius: 40px;
+  width: 45.57vw;
+  height: 23.33vw;
+  border-radius: 2.08vw;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -51,34 +51,34 @@
 
 .service-title {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 1.04vw;
+  left: 1.04vw;
   color: rgba(255, 255, 255, 1);
   font-family: "centurygothic";
   font-weight: 400;
-  font-size: 50px;
-  line-height: 46px;
+  font-size: 2.6vw;
+  line-height: 2.39vw;
   text-align: left;
 }
 
 .service-title.shift-up {
-  bottom: 60px;
+  bottom: 3.12vw;
 }
 
 .service-item button {
   font-family: "centurygothic";
   font-weight: 400;
-  font-size: 50px;
-  line-height: 46px;
+  font-size: 2.6vw;
+  line-height: 2.39vw;
   text-align: center;
   background-color: #84aac8;
   border: none;
-  width: 594px;
-  height: 74px;
-  border-radius: 37px;
+  width: 39.93vw;
+  height: 3.85vw;
+  border-radius: 1.92vw;
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
-  margin: 20px auto 0;
+  margin: 1vw auto ;
   transition: transform 0.3s ease;
 }
 
@@ -90,10 +90,10 @@
 .next-arrow,
 .prev-arrow {
   position: absolute;
-  top: 28%;
+  top: 25%;
   background-color: rgba(132, 170, 200, 1);
   border-radius: 50%;
-  width: 67px;
+  width: 3.48vw;
   aspect-ratio: 1;
   display: flex;
   align-items: center;
@@ -109,25 +109,25 @@
 }
 
 .next-arrow {
-  right: 10px;
+  right: 0.52vw;
 }
 
 .prev-arrow {
-  left: 10px;
+  left: 0.52vw;
 }
 
 .next-arrow img,
 .prev-arrow img {
-  width: 40px;
+  width: 2.08vw;
   aspect-ratio: 1;
 }
 
 .service-modal {
-  width: 850px;
-  height: 300px;
+  width: 44.27vw;
+  height: 15.62vw;
   background: rgba(132, 170, 200, 0.35);
-  border-radius: 28px;
-  padding: 45px;
+  border-radius: 1.45vw;
+  padding: 2.34vw;
   color: rgba(48, 48, 48, 1);
   display: flex;
   align-items: center;
@@ -140,15 +140,15 @@
   font-family: "centurygothic";
   font-weight: 400;
   text-align: left;
-  font-size: 30px;
-  line-height: 38px;
+  font-size: 1.56vw;
+  line-height: 1.97vw;
 }
 
 .modal-close {
   position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 40px;
+  top: 0.52vw;
+  right: 1.04vw;
+  font-size: 2.08;
   color: #fff;
   cursor: pointer;
 }

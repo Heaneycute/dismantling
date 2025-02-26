@@ -28,15 +28,15 @@ const HeroSection: React.FC = memo(() => {
             в сфере демонтажа зданий
             <br />и сооружений любой сложности
           </p>
-          <div className="footer-bottom">
-            <div className="social-icons">
+          <div className="hero-contact-block">
+            <div className="hero-social-icons">
               <a
                 href="https://t.me/Snos_SPB"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Telegram компании"
               >
-                <div className="social-circle telegram">
+                <div className="hero-social-circle telegram">
                   <img src={TG} alt="Иконка Telegram" loading="lazy" />
                 </div>
               </a>
@@ -46,12 +46,12 @@ const HeroSection: React.FC = memo(() => {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp компании"
               >
-                <div className="social-circle whatsapp">
+                <div className="hero-social-circle whatsapp">
                   <img src={WA} alt="Иконка WhatsApp" loading="lazy" />
                 </div>
               </a>
             </div>
-            <div className="contact-info">
+            <div className="hero-contact-info">
               <p>+79119271855</p>
               <p>9271855@mail.ru</p>
             </div>
