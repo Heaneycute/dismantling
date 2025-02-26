@@ -51,7 +51,7 @@
 
 .social-circle {
   width: 97px;
-  height: 97px;
+  aspect-ratio: 1;
   background: rgba(132, 170, 200, 1);
   border-radius: 50%;
   display: flex;
@@ -62,7 +62,7 @@
 
 .social-circle img {
   width: 64px;
-  height: 64px;
+  aspect-ratio: 1;
 }
 
 .social-circle:hover {

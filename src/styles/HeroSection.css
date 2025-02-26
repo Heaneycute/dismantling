@@ -87,4 +87,6 @@
   position: absolute;
   bottom: -450px;
   left: 0px;
+  display: flex;
+  gap: 200px;
 }
