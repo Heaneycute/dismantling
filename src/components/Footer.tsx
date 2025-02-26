@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import "../styles/Footer.css";
-import TG from "../assets/TG.svg";
-import WA from "../assets/WA.svg";
+import TG from "../assets/TG.jpg";
+import WA from "../assets/WA.jpg";
 import footerImage from "../assets/footer.jpg";
 
 const Footer: React.FC = memo(() => {
