@@ -1,6 +1,6 @@
 import React, { memo } from "react";
-import TG from "../assets/TG.jpg";
-import WA from "../assets/WA.jpg";
+import TG from "../assets/TG.png";
+import WA from "../assets/WA.png";
 import "../styles/HeroSection.css";
 
 const HeroSection: React.FC = memo(() => {

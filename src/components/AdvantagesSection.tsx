@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import "../styles/AdvantagesSection.css";
-import lockIcon from "../assets/lock.jpg";
-import moneyIcon from "../assets/money.jpg";
-import tapIcon from "../assets/tap.jpg";
-import timeIcon from "../assets/time.jpg";
+import lockIcon from "../assets/lock.png";
+import moneyIcon from "../assets/money.png";
+import tapIcon from "../assets/tap.png";
+import timeIcon from "../assets/time.png";
 
 const advantages = [
   {
