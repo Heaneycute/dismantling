@@ -1,11 +1,9 @@
-import React, { useState, useRef, useEffect, memo, useCallback } from "react";
+import React, { useState, memo, useCallback } from "react";
 import "../styles/ServicesSection.css";
-import img1 from "../assets/1.png";
-import img2 from "../assets/2.png";
-import img3 from "../assets/3.png";
-import img4 from "../assets/4.png";
-import leftArrow from "../assets/left-arrow.png";
-import rightArrow from "../assets/right-arrow.png";
+import img1 from "../assets/1.jpg";
+import img2 from "../assets/2.jpg";
+import img3 from "../assets/3.jpg";
+import img4 from "../assets/4.jpg";
 
 const services = [
   {
@@ -48,42 +46,10 @@ const services = [
 
 const ServicesSection: React.FC = memo(() => {
   const [activeModal, setActiveModal] = useState<number | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [modalPosition, setModalPosition] = useState<{
-    top: number;
-    left: number;
-  } | null>(null);
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const totalSlides = services.length;
-  const maxIndex = totalSlides - 2;
-
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
-    setActiveModal(null);
-  }, [maxIndex]);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => Math.max(prev - 1, 0));
-    setActiveModal(null);
-  }, []);
 
   const toggleModal = useCallback((index: number) => {
     setActiveModal((prev) => (prev === index ? null : index));
   }, []);
-
-  useEffect(() => {
-    if (activeModal !== null && buttonRefs.current[activeModal]) {
-      const rect = buttonRefs.current[activeModal]!.getBoundingClientRect();
-      const newTop = rect.bottom + 10;
-      const newLeft = rect.left + rect.width / 2 - 600;
-      setModalPosition({
-        top: newTop,
-        left: newLeft,
-      });
-    } else {
-      setModalPosition(null);
-    }
-  }, [activeModal]);
 
   return (
     <section
@@ -91,72 +57,48 @@ const ServicesSection: React.FC = memo(() => {
       aria-label="Услуги компании: полный цикл работ, документация, вывоз мусора, экологическое сопровождение"
     >
       <h2>ЧТО МЫ ПРЕДЛАГАЕМ?</h2>
-      <div className="services-slider-wrapper">
-        <div
-          className="services-slider"
-          style={{
-            transform: `translateX(-${currentIndex * 49.55}vw)`,
-          }}
-        >
-          {services.map((service, index) => (
-            <div key={service.id} className="service-item">
+      <div className="services-grid">
+        {services.map((service, index) => (
+          <div key={service.id} className="service-item">
+            <div
+              className="service-image"
+              style={{ backgroundImage: `url(${service.image})` }}
+            >
               <div
-                className="service-image"
-                style={{ backgroundImage: `url(${service.image})` }}
+                className={`service-title ${
+                  service.title.length === 2 ? "shift-up" : ""
+                } ${activeModal === index ? "hidden" : ""}`}
               >
-                <div
-                  className={`service-title ${
-                    service.title.length === 2 ? "shift-up" : ""
-                  }`}
-                >
-                  {service.title.map((line, i) => (
-                    <p key={i}>{line}</p>
-                  ))}
-                </div>
+                {service.title.map((line, i) => (
+                  <p key={i}>{line}</p>
+                ))}
               </div>
+            </div>
+            <div className="button-container">
               <button
-                ref={(el: HTMLButtonElement | null) => {
-                  buttonRefs.current[index] = el;
-                }}
                 onClick={() => toggleModal(index)}
                 aria-label={`Узнать подробнее о ${service.title[0]}`}
               >
                 Узнать подробнее
               </button>
             </div>
-          ))}
-        </div>
-        {currentIndex > 0 && (
-          <div className="prev-arrow" onClick={prevSlide}>
-            <img src={leftArrow} alt="Предыдущий слайд" loading="lazy" />
+            {activeModal === index && (
+              <div className="modal-container">
+                <div className="service-modal">
+                  <p>{services[index].description}</p>
+                  <span
+                    className="modal-close"
+                    onClick={() => setActiveModal(null)}
+                    aria-label="Закрыть модальное окно"
+                  >
+                    ✖
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-        {currentIndex < maxIndex && (
-          <div className="next-arrow" onClick={nextSlide}>
-            <img src={rightArrow} alt="Следующий слайд" loading="lazy" />
-          </div>
-        )}
+        ))}
       </div>
-      {activeModal !== null && modalPosition && (
-        <div
-          className="service-modal"
-          style={{
-            position: "sticky",
-            top: `${modalPosition.top}px`,
-            left: `${modalPosition.left}px`,
-          }}
-          aria-label={`Описание услуги: ${services[activeModal].description}`}
-        >
-          <span
-            className="modal-close"
-            onClick={() => setActiveModal(null)}
-            aria-label="Закрыть модальное окно"
-          >
-            ✖
-          </span>
-          <p>{services[activeModal].description}</p>
-        </div>
-      )}
     </section>
   );
 });

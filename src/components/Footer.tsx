@@ -1,8 +1,8 @@
 import React, { memo } from "react";
 import "../styles/Footer.css";
-import TG from "../assets/TG.png";
-import WA from "../assets/WA.png";
-import footerImage from "../assets/footer.png";
+import TG from "../assets/TG.svg";
+import WA from "../assets/WA.svg";
+import footerImage from "../assets/footer.jpg";
 
 const Footer: React.FC = memo(() => {
   return (
@@ -39,8 +39,15 @@ const Footer: React.FC = memo(() => {
               </a>
             </div>
             <div className="contact-info">
-              <p>+79119271855</p>
-              <p>9271855@mail.ru</p>
+              <a href="tel:+79119271855" aria-label="Позвонить +79119271855">
+                <p>+79119271855</p>
+              </a>
+              <a
+                href="mailto:9271855@mail.ru"
+                aria-label="Написать на 9271855@mail.ru"
+              >
+                <p>9271855@mail.ru</p>
+              </a>
             </div>
           </div>
         </div>

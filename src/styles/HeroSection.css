@@ -22,9 +22,8 @@
   position: absolute;
   width: 100vw;
   height: 59.79vw;
-  background-image: url("../assets/HeroSection.png");
+  background-image: url("../assets/HeroSection.jpg");
   background-size: cover;
-  background-position: center -8.85vw;
   z-index: -1;
 }
 
@@ -128,4 +127,13 @@
 
 .hero-social-circle:hover {
   background-color: rgba(102, 128, 160, 1);
+}
+
+.hero-contact-info a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.hero-contact-info a:hover {
+  text-decoration: underline;
 }
